@@ -1,197 +1,189 @@
 @font-face {
-    font-family: 'ArilloUI';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../font/Arillo_UI_Regular.ttf') format('truetype');
+  font-family: "ArilloUI";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Arillo_UI_Regular.ttf") format("truetype");
 }
 
 * {
-    font: normal 100% "ArilloUI";
-    font-family: Helvetica,
-        'ArilloUI',
-        sans-serif;
-    cursor: default;
+  font: normal 100% "ArilloUI";
+  font-family: Helvetica, "ArilloUI", sans-serif;
+  cursor: default;
 }
 
 body {
-    display: table;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    font-size: 32px;
-    color: #ffffff;
+  display: table;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 32px;
+  color: #ffffff;
 }
 
 .background {
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('/usr/share/backgrounds/current');
-    background-color: #4c4c4c;
-    -webkit-background-size: cover;
-    -webkit-filter: blur(8px);
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("/usr/share/backgrounds/current");
+  background-color: #4c4c4c;
+  -webkit-background-size: cover;
+  -webkit-filter: blur(8px);
 }
 
 .cover {
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(76, 76, 76, 0.65);
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(76, 76, 76, 0.65);
 }
 
 body,
 div,
 span {
-    -webkit-user-select: none;
+  -webkit-user-select: none;
 }
 
 input {
-    padding: 12px;
-    color: rgba(255, 255, 255, 0.82);
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.18);
-    font-size: 32px;
-    text-indent: 16px;
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.82);
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 32px;
+  text-indent: 16px;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 input::-webkit-input-placeholder {
-    transform: translate3d(0, 3px, 0)
+  transform: translate3d(0, 3px, 0);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .smooth {
-    -webkit-transition: visibility 0s,
-        opacity 0.3s,
-        left 0.4s;
+  -webkit-transition: visibility 0s, opacity 0.3s, left 0.4s;
 }
 
 .hidden {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition-delay: 0.3s,
-        0s,
-        0s;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-delay: 0.3s, 0s, 0s;
 }
 
 .passhidden {
-    position: relative;
-    opacity: 0;
+  position: relative;
+  opacity: 0;
 }
 
 .passsmooth {
-    -webkit-transition: opacity 0.1s;
+  -webkit-transition: opacity 0.1s;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .pass {
-    position: relative;
-    top: 16px;
-    text-align: center;
+  position: relative;
+  top: 16px;
+  text-align: center;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .footer,
 .header {
-    width: 100%;
+  width: 100%;
 }
 
 .time {
-    float: right;
-    margin-top: 14px;
-    margin-right: 28px;
-    font-size: 28px;
+  float: right;
+  margin-top: 14px;
+  margin-right: 28px;
+  font-size: 28px;
 }
 
 .login_content {
-    display: table-row;
-    position: relative;
+  display: table-row;
+  position: relative;
 }
 
 .login_container {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #message {
-    display: table-row;
-    height: 130px;
-    -webkit-transition: visibility 0s,
-        opacity 0.3s,
-        height 0.3s;
+  display: table-row;
+  height: 130px;
+  -webkit-transition: visibility 0s, opacity 0.3s, height 0.3s;
 }
 
 #message.hidden {
-    height: 0px;
+  height: 0px;
 }
 
 #message_content {
-    display: table-cell;
-    text-align: center;
-    vertical-align: top;
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
 }
 
 #message_content.error {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .user {
-    display: inline-block;
-    position: relative;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .user:active {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .user_image {
-    margin: auto;
-    border-radius: 50%;
-    width: 192px;
-    height: 192px;
-    -webkit-transition: all 0.3s ease-in-out;
+  margin: auto;
+  border-radius: 50%;
+  width: 192px;
+  height: 192px;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 .user_name {
-    display: block;
-    margin-top: 40px;
+  display: block;
+  margin-top: 40px;
 }
 
 .action {
-    display: inline-block;
-    width: 160px;
-    margin: 40px;
-    margin-bottom: 240px;
+  display: inline-block;
+  width: 160px;
+  margin: 40px;
+  margin-bottom: 240px;
 }
 
 .action_image {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 18px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 18px;
 }
 
 .action_label {
-    color: #ffffff;
-    font-size: 28px;
+  color: #ffffff;
+  font-size: 28px;
 }
