@@ -2,7 +2,7 @@
 
 ![screenshot](https://raw.githubusercontent.com/paysonwallach/aqua-lightdm-webkit-theme/master/screenshots/aqua-lightdm-webkit-theme.png)
 
-A LightDM webkit greeter theme inspired by macOS, based on [lightdm-webkit-theme-macos](https://github.com/ZoomTen/lightdm-webkit-theme-macos), and updated with Mojave in mind.
+A LightDM webkit greeter theme inspired by macOS, based on [lightdm-webkit-theme-macos](https://github.com/ZoomTen/lightdm-webkit-theme-macos), and updated with Catalina in mind.
 
 ## Installation
 
