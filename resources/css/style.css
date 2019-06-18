@@ -5,6 +5,29 @@
   src: url("../font/Arillo_UI_Regular.ttf") format("truetype");
 }
 
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
 * {
   font: normal 100% "ArilloUI";
   font-family: Helvetica, "ArilloUI", sans-serif;
@@ -16,8 +39,8 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-size: 32px;
-  color: #ffffff;
+  font-size: 16px;
+  color: #fafafa;
 }
 
 .background {
@@ -46,13 +69,13 @@ span {
 }
 
 input {
-  padding: 12px;
+  padding: 6px;
   color: rgba(255, 255, 255, 0.82);
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.18);
-  font-size: 32px;
-  text-indent: 16px;
+  font-size: 16px;
+  text-indent: 8px;
 }
 
 input:focus {
@@ -86,13 +109,18 @@ a {
   -webkit-transition: opacity 0.1s;
 }
 
+.apply_shake {
+  animation: shake 1s both;
+}
+
 .center {
   text-align: center;
 }
 
 .pass {
   position: relative;
-  top: 16px;
+  top: 8px;
+  left: 0px;
   text-align: center;
 }
 
@@ -110,9 +138,9 @@ a {
 
 .time {
   float: right;
-  margin-top: 14px;
-  margin-right: 28px;
-  font-size: 28px;
+  margin-top: 7px;
+  margin-right: 14px;
+  font-size: 14px;
 }
 
 .login_content {
@@ -127,7 +155,7 @@ a {
 
 #message {
   display: table-row;
-  height: 130px;
+  height: 65px;
   -webkit-transition: visibility 0s, opacity 0.3s, height 0.3s;
 }
 
@@ -142,15 +170,15 @@ a {
 }
 
 #message_content.error {
-  color: #ffffff;
+  color: #ff5252;
 }
 
 .user {
   display: inline-block;
   position: relative;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .user:active {
@@ -160,30 +188,90 @@ a {
 .user_image {
   margin: auto;
   border-radius: 50%;
-  width: 192px;
-  height: 192px;
+  width: 96px;
+  height: 96px;
   -webkit-transition: all 0.3s ease-in-out;
 }
 
 .user_name {
   display: block;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .action {
   display: inline-block;
-  width: 160px;
-  margin: 40px;
-  margin-bottom: 240px;
+  width: 80px;
+  margin: 20px;
+  margin-bottom: 120px;
 }
 
 .action_image {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 18px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 9px;
 }
 
 .action_label {
-  color: #ffffff;
-  font-size: 28px;
+  color: #fafafa;
+  font-size: 14px;
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-width: 2000px) {
+  body {
+    font-size: 32px;
+  }
+
+  input {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 32px;
+    text-indent: 16px;
+  }
+
+  .pass {
+    top: 16px;
+  }
+
+  .time {
+    margin-top: 14px;
+    margin-right: 28px;
+    font-size: 28px;
+  }
+
+  .user {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
+  .user_image {
+    width: 192px;
+    height: 192px;
+  }
+
+  .user_name {
+    margin-top: 40px;
+  }
+
+  #message {
+    height: 130px;
+  }
+
+  .action {
+    width: 160px;
+    margin: 40px;
+    margin-bottom: 240px;
+  }
+
+  .action_image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 18px;
+  }
+
+  .action_label {
+    font-size: 28px;
+  }
 }
