@@ -251,26 +251,6 @@ function on_image_error(err) {
 }
 
 /*
- * set clock time
- */
-function update_time() {
-  var time = document.querySelector("#current_time");
-  var date = new Date();
-
-  var hh = date.getHours();
-  var mm = date.getMinutes();
-  var ss = date.getSeconds();
-
-  if (mm < 10) {
-    mm = "0" + mm;
-  }
-  if (ss < 10) {
-    ss = "0" + ss;
-  }
-  time.innerHTML = hh + ":" + mm;
-}
-
-/*
  * enable keyboard navigation
  * @param {any} key press event to handle
  */
@@ -297,23 +277,22 @@ function key_press_handler(event) {
 /* Initialization */
 
 function initialize() {
-  show_message("");
   initialize_users();
-  initialize_timer();
+  initialize_clock();
 
   document.addEventListener("keypress", key_press_handler);
 }
 
 function initialize_users() {
-  var template = document.querySelector("#user_template");
-  var parent = template.parentElement;
+  const template = document.querySelector("#user_template");
+  const parent = template.parentElement;
 
   parent.removeChild(template);
 
-  for (var user of lightdm.users) {
+  for (let user of lightdm.users) {
     userNode = template.cloneNode(true);
-    var image = userNode.querySelectorAll(".user_image")[0];
-    var name = userNode.querySelectorAll(".user_name")[0];
+    const image = userNode.querySelectorAll(".user_image")[0];
+    const name = userNode.querySelectorAll(".user_name")[0];
 
     name.innerHTML = user.display_name;
 
@@ -331,9 +310,11 @@ function initialize_users() {
   setTimeout(show_users, 400);
 }
 
-function initialize_timer() {
-  update_time();
-  setInterval(update_time, 1000);
+function initialize_clock() {
+  const time = document.querySelector("#time");
+
+  time.innerHTML = theme_utils.get_current_localized_time();
+  setInterval( () => time.innerHTML = theme_utils.get_current_localized_time(), 60000);
 }
 
 function add_action(id, name, image, click_handler, template, parent) {
