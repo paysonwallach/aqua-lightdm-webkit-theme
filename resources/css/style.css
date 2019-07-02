@@ -6,6 +6,7 @@
 }
 
 @keyframes shake {
+
   10%,
   90% {
     transform: translateX(-1px);
@@ -43,7 +44,7 @@ body {
   color: #fafafa;
 }
 
-.background {
+#background {
   z-index: -1;
   position: absolute;
   width: 100%;
@@ -54,7 +55,7 @@ body {
   -webkit-filter: blur(8px);
 }
 
-.cover {
+#cover {
   z-index: -1;
   position: absolute;
   width: 100%;
@@ -88,6 +89,13 @@ input::-webkit-input-placeholder {
 
 a {
   text-decoration: none;
+}
+
+#time {
+  float: right;
+  margin-top: 7px;
+  margin-right: 14px;
+  font-size: 14px;
 }
 
 .smooth {
@@ -134,13 +142,6 @@ a {
 .footer,
 .header {
   width: 100%;
-}
-
-.time {
-  float: right;
-  margin-top: 7px;
-  margin-right: 14px;
-  font-size: 14px;
 }
 
 .login_content {
@@ -216,8 +217,7 @@ a {
   font-size: 14px;
 }
 
-@media
-(-webkit-min-device-pixel-ratio: 2),
+@media (-webkit-min-device-pixel-ratio: 2),
 (min-width: 2000px) {
   body {
     font-size: 32px;
@@ -230,11 +230,7 @@ a {
     text-indent: 16px;
   }
 
-  .pass {
-    top: 16px;
-  }
-
-  .time {
+  #time {
     margin-top: 14px;
     margin-right: 28px;
     font-size: 28px;
@@ -253,6 +249,10 @@ a {
 
   .user_name {
     margin-top: 40px;
+  }
+
+  .pass {
+    top: 16px;
   }
 
   #message {
