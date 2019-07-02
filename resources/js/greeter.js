@@ -59,7 +59,13 @@ function show_prompt(text) {
     password_entry.placeholder = text.replace(":", "");
 
     const back = document.querySelector("#back");
-    setVisible(back);
+    const enter = document.querySelector("#enter");
+
+    back.onclick = show_users;
+    setVisible(back, true);
+
+    enter.onclick = provide_secret;
+    setVisible(enter, true);
   }
 
   password_entry.value = "";
@@ -180,6 +186,8 @@ function show_users() {
     user.style.left = 0;
   }
 
+  setVisible(document.querySelector("#back"), false);
+  setVisible(document.querySelector("#enter"), false);
   setVisiblePass(document.querySelector("#password_container"), false);
   selected_user = null;
 }
