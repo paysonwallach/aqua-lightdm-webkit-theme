@@ -23,9 +23,9 @@
 
 /* Globals */
 
-var time_remaining = 0;
-var selected_user = null;
-var valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
+let time_remaining = 0;
+let selected_user = null;
+let valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
 
 /* Callback API. Called by the webkit greeeter */
 
@@ -34,28 +34,32 @@ var valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
  * @param {str} text to show in prompt
  */
 function show_prompt(text) {
-  var password_container = document.querySelector("#password_container");
-  var password_entry = document.querySelector("#password_entry");
+  const password_container = document.querySelector("#password_container");
+  const password_entry = document.querySelector("#password_entry");
 
   if (!isVisiblePass(password_container)) {
-    var users = document.querySelectorAll(".user");
-    var user_node = document.querySelector("#" + selected_user);
-    var rect = user_node.getClientRects()[0];
-    var parentRect = user_node.parentElement.getClientRects()[0];
-    var center = parentRect.width / 2;
-    var left = center - rect.width / 2 - rect.left;
+    const users = document.querySelectorAll(".user");
+    const user_node = document.querySelector("#" + selected_user);
+    const rect = user_node.getClientRects()[0];
+    const parentRect = user_node.parentElement.getClientRects()[0];
+    const center = parentRect.width / 2;
+
+    let left = center - rect.width / 2 - rect.left;
 
     if (left < 5 && left > -5) {
       left = 0;
     }
 
-    for (var user of users) {
+    for (let user of users) {
       setVisible(user, user.id === selected_user);
       user.style.left = left;
     }
 
     setVisiblePass(password_container, true);
     password_entry.placeholder = text.replace(":", "");
+
+    const back = document.querySelector("#back");
+    setVisible(back);
   }
 
   password_entry.value = "";
@@ -67,7 +71,7 @@ function show_prompt(text) {
  * @param {str} text to show in message
  */
 function show_message(text) {
-  var message = document.querySelector("#message_content");
+  const message = document.querySelector("#message_content");
 
   message.innerHTML = text;
 
@@ -86,7 +90,7 @@ function show_message(text) {
  */
 function show_error(text) {
   show_message(text);
-  var message = document.querySelector("#message_content");
+  const message = document.querySelector("#message_content");
 
   message.classList.add("error");
 }
@@ -102,7 +106,7 @@ function authentication_complete() {
 
     password_container.classList.add("apply_shake");
     password_container.addEventListener("animationend", (err) => {
-        password_container.classList.remove("apply_shake");
+      password_container.classList.remove("apply_shake");
     });
     start_authentication(selected_user);
   }
@@ -140,18 +144,20 @@ function provide_secret() {
  * enumerate available sessions
  */
 function initialize_sessions() {
-  var template = document.querySelector("#session_template");
-  var container = session_template.parentElement;
+  const template = document.querySelector("#session_template");
+  const container = session_template.parentElement;
+
   container.removeChild(template);
 
-  for (var session of lightdm.sessions) {
-    var s = template.cloneNode(true);
+  for (let session of lightdm.sessions) {
+    const label = s.querySelector(".session_label");
+
+    let s = template.cloneNode(true);
+
     s.id = "session_" + session.key;
 
-    var label = s.querySelector(".session_label");
-    var radio = s.querySelector("input");
+    let radio = s.querySelector("input");
 
-    console.log(s, session);
     label.innerHTML = session.name;
     radio.value = session.key;
 
@@ -167,9 +173,9 @@ function initialize_sessions() {
  * set visibilty of users
  */
 function show_users() {
-  var users = document.querySelectorAll(".user");
+  const users = document.querySelectorAll(".user");
 
-  for (var user of users) {
+  for (let user of users) {
     setVisible(user, true);
     user.style.left = 0;
   }
@@ -260,9 +266,9 @@ function key_press_handler(event) {
   switch (event.which) {
     case 13:
       action =
-        selected_user != null
-          ? provide_secret
-          : start_authentication(lightdm.users[0].name);
+        selected_user != null ?
+        provide_secret :
+        start_authentication(lightdm.users[0].name);
       break;
     case 27:
       // TODO: Cancel login if user is selected, ignore otherwise
