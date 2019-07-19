@@ -63,13 +63,6 @@ body {
   background: rgba(76, 76, 76, 0.65);
 }
 
-/*
-body,
-div,
-span {
-  -webkit-user-select: none;
-}
-*/
 input {
   color: rgba(255, 255, 255, 0.82);
   border: none;
@@ -136,14 +129,14 @@ a {
   justify-content: center;
 }
 
-#row_container img {
-  opacity: 0.6;
-}
-
-#back,
-#enter {
+.login_container_button {
   display: block;
   padding: 6px;
+  fill: rgba(255, 255, 255, 0.18);
+}
+
+.login_container_button:active {
+  fill: rgba(0, 0, 0, 0.09);
 }
 
 .footer {
@@ -269,15 +262,10 @@ a {
     height: 96px;
   }
 
-  #row_container img {
-    height: 48px;
-    width: 48px;
-  }
-
-  #back,
-  #enter {
-    display: block;
+  .login_container_button {
     padding: 12px;
+    width: 48px;
+    height: 48px;
   }
 
   .pass {
