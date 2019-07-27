@@ -33,11 +33,6 @@
   font: normal 100% "ArilloUI";
   font-family: Helvetica, "ArilloUI", sans-serif;
   cursor: default;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 body {
@@ -149,6 +144,8 @@ a {
   bottom: 0;
   width: 100%;
   text-align: center;
+
+  -webkit-user-select: none;
 }
 
 .footer,
@@ -192,6 +189,8 @@ a {
   margin-right: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
+
+  -webkit-user-select: none;
 }
 
 .user:active {
