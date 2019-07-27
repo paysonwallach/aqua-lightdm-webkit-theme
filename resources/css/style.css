@@ -33,6 +33,11 @@
   font: normal 100% "ArilloUI";
   font-family: Helvetica, "ArilloUI", sans-serif;
   cursor: default;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
