@@ -144,6 +144,8 @@ a {
   bottom: 0;
   width: 100%;
   text-align: center;
+
+  -webkit-user-select: none;
 }
 
 .footer,
@@ -187,6 +189,8 @@ a {
   margin-right: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
+
+  -webkit-user-select: none;
 }
 
 .user:active {
