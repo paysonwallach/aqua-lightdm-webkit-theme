@@ -5,7 +5,6 @@
   <br>
   <p>
   A LightDM webkit greeter theme inspired by macOS, based on <a href=https://github.com/ZoomTen/lightdm-webkit-theme-macos>lightdm-webkit-theme-macos</a>, and updated with Catalina in mind.</p>
-  <br>
   <a href=https://github.com/paysonwallach/aqua-lightdm-webkit-theme/release/latest>
     <img src=https://img.shields.io/badge/release-v0.1.0-blue?style=flat-square>
   </a>
@@ -51,6 +50,10 @@ By default, the theme looks for its background image at `/usr/share/backgrounds/
 ## Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss the matter.
+
+## Code of Conduct
+
+By participating in this project, you agree to abide by the terms of the [Code of Conduct](https://github.com/paysonwallach/venn/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
