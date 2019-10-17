@@ -1,8 +1,22 @@
-# aqua-lightdm-webkit-theme
-
-![screenshot](https://raw.githubusercontent.com/paysonwallach/aqua-lightdm-webkit-theme/master/screenshots/aqua-lightdm-webkit-theme.png)
-
-A LightDM webkit greeter theme inspired by macOS, based on [lightdm-webkit-theme-macos](https://github.com/ZoomTen/lightdm-webkit-theme-macos), and updated with Catalina in mind.
+<div align="center">
+  <h1>aqua-lightdm-webkit-theme</h1>
+  <img alt="screenshot" src=https://raw.githubusercontent.com/paysonwallach/aqua-lightdm-webkit-theme/master/screenshots/aqua-lightdm-webkit-theme.png>
+  <br>
+  <br>
+  <p>
+  A LightDM webkit greeter theme inspired by macOS, based on <a href=https://github.com/ZoomTen/lightdm-webkit-theme-macos>lightdm-webkit-theme-macos</a>, and updated with Catalina in mind.</p>
+  <br>
+  <a href=https://github.com/paysonwallach/aqua-lightdm-webkit-theme/release/latest>
+    <img src=https://img.shields.io/badge/release-v0.1.0-blue?style=flat-square>
+  </a>
+  <a href=https://github.com/paysonwallach/aqua-lightdm-webkit-theme/blob/master/LICENSE>
+    <img src=https://img.shields.io/badge/license-HIP-994444?style=flat-square>
+  </a>
+  <a href=https://buymeacoffee.com/paysonwallach>
+    <img src=https://img.shields.io/badge/donate-Buy%20me%20a%20coffe-yellow?style=flat-square>
+  </a>
+  <br>
+</div>
 
 ## Installation
 
@@ -40,4 +54,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## License
 
-[aqua-lightdm-webkit-theme](https://github.com/paysonwallach/aqua-lightdm-webkit-theme) is licensed under the [GNU General Public License v3.0](https://github.com/paysonwallach/aqua-lightdm-webkit-theme/blob/master/LICENSE).
+[aqua-lightdm-webkit-theme](https://github.com/paysonwallach/aqua-lightdm-webkit-theme) is licensed under the [Hippocratic License](https://firstdonoharm.dev).
