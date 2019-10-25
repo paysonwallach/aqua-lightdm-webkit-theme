@@ -3,8 +3,7 @@
   <img alt="screenshot" src=https://raw.githubusercontent.com/paysonwallach/aqua-lightdm-webkit-theme/master/screenshots/aqua-lightdm-webkit-theme.png>
   <br>
   <br>
-  <p>
-  A LightDM webkit greeter theme inspired by macOS, based on <a href=https://github.com/ZoomTen/lightdm-webkit-theme-macos>lightdm-webkit-theme-macos</a>, and updated with Catalina in mind.</p>
+  <p>A LightDM webkit greeter theme inspired by macOS, based on <a href=https://github.com/ZoomTen/lightdm-webkit-theme-macos>lightdm-webkit-theme-macos</a>, and updated with Catalina in mind.</p>
   <a href=https://github.com/paysonwallach/aqua-lightdm-webkit-theme/release/latest>
     <img src=https://img.shields.io/badge/release-v0.1.0-blue?style=flat-square>
   </a>
@@ -19,15 +18,15 @@
 
 ## Installation
 
-aqua-lightdm-webkit-theme can be installed either from zip or from git. In both cases, apply the theme by modifing `/etc/lightdm/lightdm-webkit-greeter.conf` or `/etc/lightdm/lightdm-webkit2-greeter.conf` as such:
+aqua-lightdm-webkit-theme can be obtained by either downloading a `.zip` file of the contents of the repository, or by cloning the repository via `git`. In either case, the theme may be applied by modifying `/etc/lightdm/lightdm-webkit-greeter.conf` or `/etc/lightdm/lightdm-webkit2-greeter.conf` as such:
 
-```shell
+```sh
 webkit-theme = aqua
 ```
 
 ### From zip
 
-1. **Download the [Latest Release](https://github.com/paysonwallach/nocturnal/releases/latest)**
+1. **Download the [Latest Release](https://github.com/paysonwallach/aqua-lightdm-webkit-theme/releases/latest)**
 
 2. **Extract the theme**
 
@@ -39,7 +38,7 @@ webkit-theme = aqua
 
 Clone this repository into `/usr/share/lightdm-webkit/themes/aqua`:
 
-```shell
+```sh
 git clone https://github.com/paysonwallach/aqua-lightdm-webkit-theme /usr/share/lightdm-webkit/themes/aqua
 ```
 
@@ -53,7 +52,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## Code of Conduct
 
-By participating in this project, you agree to abide by the terms of the [Code of Conduct](https://github.com/paysonwallach/venn/blob/master/CODE_OF_CONDUCT.md).
+By participating in this project, you agree to abide by the terms of the [Code of Conduct](https://github.com/paysonwallach/aqua-lightdm-webkit-theme/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
