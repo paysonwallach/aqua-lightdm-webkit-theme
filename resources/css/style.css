@@ -42,6 +42,7 @@ body {
   margin: 0;
   font-size: 16px;
   color: #fafafa;
+  overflow: hidden;
 }
 
 #background {
@@ -57,7 +58,6 @@ body {
   -webkit-background-size: cover;
   -webkit-filter: blur(8px);
   transform: scale(1.02);
-  overflow: hidden;
 }
 
 input {
