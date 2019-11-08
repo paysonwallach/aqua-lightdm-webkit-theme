@@ -42,7 +42,7 @@ git clone https://github.com/paysonwallach/aqua-lightdm-webkit-theme /usr/share/
 
 ## Customization
 
-By default, the theme looks for its background image at `/usr/share/backgrounds/current`, which can simply be a symlink to the user's current background. The background image can otherwise be set by modifying the `background` property in `resources/img/style.css`.
+By default, the theme looks for its background image at `/usr/share/backgrounds/current`, which can simply be a symlink to the user's current background. Note that this image must be readable by the `lightdm` user. The background image can otherwise be set by modifying the `background` property in `resources/img/style.css`.
 
 ## Contributing
 
