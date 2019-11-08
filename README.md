@@ -26,17 +26,15 @@ webkit-theme = aqua
 
 ### From zip
 
-1. **Download the [Latest Release](https://github.com/paysonwallach/aqua-lightdm-webkit-theme/releases/latest)**
+Download the [latest release](https://github.com/paysonwallach/aqua-lightdm-webkit-theme/releases/latest), and extract it to the `lightdm-webkit-greeter` theme directory.
 
-2. **Extract the theme**
-
-   ```sh
-   unzip -o aqua-lightdm-webkit-theme.zip -d /usr/share/lightdm-webkit/themes/aqua
-   ```
+```sh
+unzip -o aqua-lightdm-webkit-theme.zip -d /usr/share/lightdm-webkit/themes/aqua
+```
 
 ### From git
 
-Clone this repository into `/usr/share/lightdm-webkit/themes/aqua`:
+Clone this repository into the `lightdm-webkit-greeter` theme directory.
 
 ```sh
 git clone https://github.com/paysonwallach/aqua-lightdm-webkit-theme /usr/share/lightdm-webkit/themes/aqua
