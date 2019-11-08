@@ -5,7 +5,7 @@
   <br>
   <p>A LightDM webkit greeter theme inspired by macOS, based on <a href=https://github.com/ZoomTen/lightdm-webkit-theme-macos>lightdm-webkit-theme-macos</a>, and updated with Catalina in mind.</p>
   <a href=https://github.com/paysonwallach/aqua-lightdm-webkit-theme/release/latest>
-    <img src=https://img.shields.io/github/v/tag/paysonwallach/aqua-lightdm-webkit-theme?style=flat-square>
+    <img src=https://img.shields.io/github/v/release/paysonwallach/aqua-lightdm-webkit-theme?style=flat-square>
   </a>
   <a href=https://github.com/paysonwallach/aqua-lightdm-webkit-theme/blob/master/LICENSE>
     <img src=https://img.shields.io/badge/license-HIP-994444?style=flat-square>
