@@ -134,7 +134,9 @@ function timed_login(user) {
  * @param {str} name of user to authenticate
  */
 function start_authentication(username) {
-  try { lightdm.cancel_authentication(); } catch (e) { console.log(e) }
+  if (typeof lightdm._user === null) {
+    try { lightdm.cancel_authentication(); } catch (e) { console.log(e) }
+  }
   lightdm.cancel_timed_login();
   selected_user = username;
   try { lightdm.start_authentication(username); } catch (e) { console.log(e) }
