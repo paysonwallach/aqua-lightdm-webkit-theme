@@ -108,7 +108,9 @@ function show_error(text) {
 function authentication_complete() {
   if (lightdm.is_authenticated) {
     // lightdm.login(lightdm.authentication_user, lightdm.default_session);
-    lightdm.login(lightdm.authentication_user, lightdm.sessions[0].key);
+    // lightdm.login(lightdm.authentication_user, lightdm.sessions[0].key);
+    let session_key = document.querySelector("#sessions").value;
+    lightdm.login(lightdm.authentication_user, session_key);
   } else {
     const password_container = document.querySelector("#password_container");
 
@@ -155,29 +157,33 @@ function provide_secret() {
  * enumerate available sessions
  */
 function initialize_sessions() {
+  
   const template = document.querySelector("#session_template");
   const container = session_template.parentElement;
 
   container.removeChild(template);
-
+  
   for (let session of lightdm.sessions) {
-    const label = s.querySelector(".session_label");
 
     let s = template.cloneNode(true);
 
     s.id = "session_" + session.key;
 
-    let radio = s.querySelector("input");
+    s.innerHTML = session.name;
+    s.value = session.key;
 
-    label.innerHTML = session.name;
-    radio.value = session.key;
+    try {
+      if (session.key === lightdm.default_session.key) {
+        s.selected = true;
+      }
+    } catch (e) { console.log(e); }
 
-    if (session.key === lightdm.default_session.key) {
-      radio.checked = true;
-    }
-
-    session_container.appendChild(s);
+    container.appendChild(s);
   }
+  if (lightdm.sessions.length == 1) {
+    document.querySelector("#session_container").style.display = "none";
+  }
+
 }
 
 /*
@@ -299,8 +305,10 @@ function key_press_handler(event) {
 function initialize() {
   initialize_users();
   initialize_clock();
+  initialize_sessions();
   document.addEventListener("keydown", key_press_handler);
 }
+
 
 function initialize_users() {
   const template = document.querySelector("#user_template");
@@ -335,7 +343,6 @@ function initialize_clock() {
   time.innerHTML = theme_utils.get_current_localized_time();
   setInterval(() => time.innerHTML = theme_utils.get_current_localized_time(), 60000);
 }
-
 
 
 function add_action(id, name, image, click_handler, template, parent) {
