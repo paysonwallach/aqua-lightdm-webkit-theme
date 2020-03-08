@@ -6,25 +6,16 @@
 }
 
 @keyframes shake {
-
-  10%,
-  90% {
+  10%, 90% {
     transform: translateX(-1px);
   }
-
-  20%,
-  80% {
+  20%, 80% {
     transform: translateX(2px);
   }
-
-  30%,
-  50%,
-  70% {
+  30%, 50%, 70% {
     transform: translateX(-4px);
   }
-
-  40%,
-  60% {
+  40%, 60% {
     transform: translateX(4px);
   }
 }
@@ -154,8 +145,7 @@ a {
   -webkit-user-select: none;
 }
 
-.footer,
-.header {
+.footer, .header {
   width: 100%;
 }
 
@@ -238,70 +228,57 @@ a {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .9);
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-width: 2000px) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-width: 2000px) {
   body {
     font-size: 32px;
   }
-
   input {
     padding: 12px;
     border-radius: 8px;
     font-size: 32px;
     text-indent: 16px;
   }
-
   #time {
     margin-top: 14px;
     margin-right: 28px;
     font-size: 28px;
   }
-
   .user {
     margin-right: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
   }
-
   .user_image {
     width: 192px;
     height: 192px;
   }
-
   .user_name {
     margin-top: 40px;
   }
-
   #row_container {
     height: 96px;
   }
-
   .login_container_button {
     padding: 12px;
     width: 48px;
     height: 48px;
   }
-
   .pass {
     padding-top: 72px;
   }
-
   #message {
     height: 130px;
   }
-
   .action {
     width: 160px;
     margin: 40px;
     margin-bottom: 240px;
   }
-
   .action_image {
     width: 60px;
     height: 60px;
     margin-bottom: 18px;
   }
-
   .action_label {
     font-size: 28px;
   }

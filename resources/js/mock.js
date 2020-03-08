@@ -161,6 +161,15 @@ if (typeof theme_utils == "undefined") {
   };
 }
 
+if (typeof theme_utils == "undefined") {
+	theme_utils = {
+		get_current_localized_time: function(){
+			return "2002-08-18 00:05:20";
+		}
+	}
+	
+}
+
 function _lightdm_mock_check_argument_length(args, length) {
   if (args.length != length) {
     throw "incorrect number of arguments in function call";
