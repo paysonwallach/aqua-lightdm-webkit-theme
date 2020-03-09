@@ -69,9 +69,11 @@ function show_prompt(text) {
     enter.onclick = provide_secret;
     setVisible(enter, true);
   }
+
   
   session_option.selected = true;
   background.classList.add("blurred")
+
   password_entry.value = "";
   password_entry.focus();
 }
@@ -123,7 +125,7 @@ function authentication_complete() {
     const password_container = document.querySelector("#password_container");
 
     password_container.classList.add("apply_shake");
-    password_container.addEventListener("animationend", (err) => {
+    password_container.addEventListener("animationend", err => {
       password_container.classList.remove("apply_shake");
     });
     start_authentication(selected_user);
@@ -146,11 +148,19 @@ function timed_login(user) {
  */
 function start_authentication(username) {
   if (typeof lightdm._user === null) {
-    try { lightdm.cancel_authentication(); } catch (e) { console.log(e) }
+    try {
+      lightdm.cancel_authentication();
+    } catch (e) {
+      console.log(e);
+    }
   }
   lightdm.cancel_timed_login();
   selected_user = username;
-  try { lightdm.start_authentication(username); } catch (e) { console.log(e) }
+  try {
+    lightdm.start_authentication(username);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 /*
@@ -196,7 +206,9 @@ function initialize_sessions() {
 function show_users() {
   const users = document.querySelectorAll(".user");
   const background = document.querySelector("#background");
+
   var logged_users = [];
+
   for (let user of users) {
     setVisible(user, true);
     if (user.logged_in) logged_users.appendChild(user); // TODO: if anyone has logged in, show only logged users.
@@ -288,11 +300,12 @@ function on_image_error(err) {
 function key_press_handler(event) {
   let action = null;
   switch (event.code) {
-    case "Enter": case "Space":
+    case "Enter":
+    case "Space":
       action =
-        selected_user != null ?
-          provide_secret :
-          start_authentication(lightdm.users[0].name);
+        selected_user != null
+          ? provide_secret
+          : start_authentication(lightdm.users[0].name);
 
       event.preventDefault();
       event.stopPropagation();
@@ -366,7 +379,10 @@ function initialize_clock() {
   const time = document.querySelector("#time");
 
   time.innerHTML = theme_utils.get_current_localized_time();
-  setInterval(() => time.innerHTML = theme_utils.get_current_localized_time(), 60000);
+  setInterval(
+    () => (time.innerHTML = theme_utils.get_current_localized_time()),
+    60000
+  );
 }
 
 
