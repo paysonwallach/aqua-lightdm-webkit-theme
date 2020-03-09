@@ -107,7 +107,8 @@ function show_error(text) {
  */
 function authentication_complete() {
   if (lightdm.is_authenticated) {
-    lightdm.login(lightdm.authentication_user, lightdm.default_session);
+    // lightdm.login(lightdm.authentication_user, lightdm.default_session);
+    lightdm.login(lightdm.authentication_user, lightdm.sessions[0].key);
   } else {
     const password_container = document.querySelector("#password_container");
 
