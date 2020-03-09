@@ -37,6 +37,8 @@ function show_prompt(text) {
   const password_container = document.querySelector("#password_container");
   const password_entry = document.querySelector("#password_entry");
   const background = document.querySelector("#background");
+  const default_session = get_default_session(selected_user);
+  const session_option = document.querySelector("#session_" + default_session) || {};
   if (!isVisiblePass(password_container)) {
     const users = document.querySelectorAll(".user");
     const user_node = document.querySelector("#" + selected_user);
@@ -67,7 +69,8 @@ function show_prompt(text) {
     enter.onclick = provide_secret;
     setVisible(enter, true);
   }
-
+  
+  session_option.selected = true;
   background.classList.add("blurred")
   password_entry.value = "";
   password_entry.focus();
@@ -110,6 +113,11 @@ function authentication_complete() {
     // lightdm.login(lightdm.authentication_user, lightdm.default_session);
     // lightdm.login(lightdm.authentication_user, lightdm.sessions[0].key);
     let session_key = document.querySelector("#sessions").value;
+    try {
+      localStorage.setItem(selected_user + '.' + 'session', session_key);
+    } catch (e) {
+      // localStorage is not supported.
+    }
     lightdm.login(lightdm.authentication_user, session_key);
   } else {
     const password_container = document.querySelector("#password_container");
@@ -160,7 +168,6 @@ function initialize_sessions() {
   
   const template = document.querySelector("#session_template");
   const container = session_template.parentElement;
-
   container.removeChild(template);
   
   for (let session of lightdm.sessions) {
@@ -171,19 +178,16 @@ function initialize_sessions() {
 
     s.innerHTML = session.name;
     s.value = session.key;
-
     try {
-      if (session.key === lightdm.default_session.key) {
+      if ( session.key == lightdm.default_session || session.key === lightdm.default_session.key) {
         s.selected = true;
       }
     } catch (e) { console.log(e); }
-
     container.appendChild(s);
   }
   if (lightdm.sessions.length == 1) {
     document.querySelector("#session_container").style.display = "none";
   }
-
 }
 
 /*
@@ -191,9 +195,11 @@ function initialize_sessions() {
  */
 function show_users() {
   const users = document.querySelectorAll(".user");
-  const background = document.querySelector("#background")
+  const background = document.querySelector("#background");
+  var logged_users = [];
   for (let user of users) {
     setVisible(user, true);
+    if (user.logged_in) logged_users.appendChild(user); // TODO: if anyone has logged in, show only logged users.
     user.style.left = 0;
   }
   setVisible(document.querySelector("#back"), false);
@@ -298,6 +304,25 @@ function key_press_handler(event) {
   if (action instanceof Function) {
     action();
   }
+}
+function get_default_session(username) {
+  try {
+    var session = localStorage.getItem(username + "." + "session");
+    if (session == null) {
+      session = lightdm.default_session.key || lightdm.default_session
+    }
+    if (session != null) {
+      return session;
+    }
+  }
+  catch(e) {
+    try {
+      session = lightdm.default_session;
+    } catch (e) {
+      session = lightdm.sessions[0];
+    }
+  }
+  return lightdm.sessions[0]
 }
 
 /* Initialization */

@@ -9,7 +9,7 @@ if (typeof lightdm == 'undefined') {
 	lightdm.layout= lightdm.layouts[0];
 	lightdm.sessions=[{key: "key1", name: "session 1", comment: "no comment"}, {key: "key2", name: "session 2", comment: "no comment"}];
 
-	lightdm.default_session=lightdm.sessions[0];
+	lightdm.default_session=lightdm.sessions[1];
 	lightdm.authentication_user= null;
 	lightdm.is_authenticated= false;
 	lightdm.can_suspend= true;
