@@ -284,7 +284,6 @@ function key_press_handler(event) {
   let action = null;
   switch (event.code) {
     case "Enter":
-    case "Space":
       action =
         selected_user != null
           ? provide_secret
