@@ -100,7 +100,7 @@ a {
 }
 
 .pass {
-  padding-top: 36px;
+  padding-top: 18px;
 }
 
 .passhidden {
@@ -110,10 +110,33 @@ a {
 .passsmooth {
   -webkit-transition: opacity 0.1s;
 }
-
+#session_container {
+  position: relative;
+  display: inline;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.82);
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 16px;
+  padding: 8px;
+  text-align: center;
+  max-width: 36px;
+}
+#sessions {
+  top: 8px;
+  left: 8px;
+  margin: -8px;
+  height: 36px;
+  position: absolute;
+  width: 36px;
+  opacity: 0;
+  display: inline-block;
+}
 .apply_shake {
   animation: shake 1s both;
 }
+
 
 .center {
   text-align: center;
@@ -266,6 +289,7 @@ a {
   .pass {
     padding-top: 72px;
   }
+
   #message {
     height: 130px;
   }
